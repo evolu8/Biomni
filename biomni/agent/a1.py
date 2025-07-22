@@ -47,7 +47,7 @@ class A1:
         timeout_seconds=600,
         base_url: str | None = None,
         api_key: str = "EMPTY",
-        temp = "0.0"
+        temperature: float = 0.0
     ):
         """Initialize the biomni agent.
 
@@ -104,7 +104,7 @@ class A1:
         self.path = os.path.join(path, "biomni_data")
         module2api = read_module2api()
 
-        self.llm = get_llm(llm, stop_sequences=["</execute>", "</solution>"], base_url=base_url, api_key=api_key, temprature=temp)
+        self.llm = get_llm(llm, stop_sequences=["</execute>", "</solution>"], base_url=base_url, api_key=api_key, temperature=temperature)
         self.module2api = module2api
         self.use_tool_retriever = use_tool_retriever
 
